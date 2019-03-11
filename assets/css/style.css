@@ -1,12 +1,31 @@
 body{
     text-align: center;
+    margin-left: 80px;
+    background-image: url("../images/240_F_80320717_FZ6vY1Ap11QcIbySrvvUNGQrN7L1HDMN.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
 
 h1{
     font-size: 50px;
 }
 
+h2{
+    text-align: left;
+}
+
 p{
     padding: 10px;
     font-size: 20px;
+    text-align: left;
+}
+
+.submit{
+    float: right;
+    padding: 15px;
+    border: solid black 1px;
+    background: green;
+    border-radius: 10px;
+    color: beige;
 }

@@ -12,7 +12,7 @@
 
 <body>
     <h1>
-        Trivia Game
+        Trivia Game: Golf
     </h1>
 
     <!-- if statement for if: Answer 1 was chosen, run this code. There would be a variable for correct answers, incorrect answers and answers not filled in yet
@@ -22,52 +22,122 @@
         check value = correct/incorrect/empty correctAnswers++,etc
 
         id and name should be the same for radio
+
+        name question 1 and value = correct correctAnswer++
     -->
-    <h2 class="questions">Question 1</h2>
+    <h2 class="questionOne">How many wins does Tiger Woods have on the PGA Tour?</h2>
 
-    <p class="answers">
-        Answer 1: <input type="radio" id="qOne" name="qOne" value = correct><br><br>
-        Answer 2: <input type="radio" id="qTwo" name="qTwo"><br><br>
-        Answer 3: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 4: <input type="radio" id="myRadio" name="question 1"><br><br>
+    <p class="answersToOne">
+        <input class="answer" type="radio" name="questionOne" value="correct"> 80 <br><br>
+        <input class="answer" type="radio" name="questionOne" value="incorrect"> 107 <br><br>
+        <input class="answer" type="radio" name="questionOne" value="incorrect"> 40 <br><br>
+        <input class="answer" type="radio" name="questionOne" value="incorrect"> All of them <br><br>
     </p>
 
-    <h2 class="questions">Question 2</h2>
+
+    <h2 class="questionTwo">What is the term for shooting one under par?</h2>
 
     <p class="answers">
-        Answer 1: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 2: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 3: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 4: <input type="radio" id="myRadio" name="question 1"><br><br>
+        <input class="answer" type="radio" name="questionTwo" value="incorrect"> Eagle <br><br>
+        <input class="answer" type="radio" name="questionTwo" value="incorrect"> Bogey <br><br>
+        <input class="answer" type="radio" name="questionTwo" value="correct"> Birdie <br><br>
+        <input class="answer" type="radio" name="questionTwo" value="incorrect"> Big Birdie <br><br>
     </p>
 
-    <h2 class="questions">Question 3</h2>
+    <h2 class="questions">How many clubs are you allowed to carry in your golf bag? </h2>
 
     <p class="answers">
-        Answer 1: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 2: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 3: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 4: <input type="radio" id="myRadio" name="question 1"><br><br>
+        <input class="answer" type="radio" name="questionThree" value="incorrect"> 12 <br><br>
+        <input class="answer" type="radio" name="questionThree" value="correct"> 14 <br><br>
+        <input class="answer" type="radio" name="questionThree" value="incorrect"> 16 <br><br>
+        <input class="answer" type="radio" name="questionThree" value="incorrect"> That's a thing? <br><br>
     </p>
 
-    <h2 class="questions">Question 4</h2>
+    <h2 class="questions">What is the term for shooting two under par?</h2>
 
     <p class="answers">
-        Answer 1: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 2: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 3: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 4: <input type="radio" id="myRadio" name="question 1"><br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> Albatross <br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> Turkey <br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> Birdie <br><br>
+        <input class="answer" type="radio" name="questionFour" value="correct"> Eagle <br><br>
     </p>
 
-    <h2 class="questions">Question 5</h2>
+    <h2 class="questions">How many holes are in a golf course?</h2>
 
     <p class="answers">
-        Answer 1: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 2: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 3: <input type="radio" id="myRadio" name="question 1"><br><br>
-        Answer 4: <input type="radio" id="myRadio" name="question 1"><br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> 9 <br><br>
+        <input class="answer" type="radio" name="questionFour" value="correct"> 18 <br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> 27 <br><br>
+        <input class="answer" type="radio" name="questionFour" value="incorrect"> 36 <br><br>
     </p>
 
+    <div class="submit">
+        Submit
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script>
+
+        var right = 0;
+        var wrong = 0;
+
+
+        $(".answer").on("click", function () {
+            alert($(this).val())
+        })
+
+        // console.log($(".answer").val())
+
+
+        // $(".submit").on("click", function () {
+        //     // if ($(".answer").val("correct").attr("checked")===true){
+        //     //     alert("woo")                
+        //     // } 
+
+        //     // if ($('input[value="correct"]:checked')) {
+        //     //     alert("woo")
+        //     // }
+
+        //     // else {
+        //     //     alert("boo")
+        //     // }
+
+        //         alert($(this).val())
+
+            // console.log($(this).val())
+        // })
+
+
+    </script>
 </body>
 
 </html>
+
+<!-- <ul>
+    <li>
+      <h3>How many letters are there in "JS"?</h3>
+      <input type="radio" name="question0" value="A">2<br>
+      <input type="radio" name="question0" value="B">1<br>
+      <input type="radio" name="question0" value="C">3<br>
+      <input type="radio" name="question0" value="D">4<br>
+    </li>
+    <li>
+      <h3>How many letters are there in "BMX"?</h3>
+      <input type="radio" name="question1" value="A">2<br>
+      <input type="radio" name="question1" value="B">1<br>
+      <input type="radio" name="question1" value="C">3<br>
+      <input type="radio" name="question1" value="D">4<br>
+    </li>
+    <li>
+      <h3>How many letters are there in "A"?</h3>
+      <input type="radio" name="question2" value="A">2<br>
+      <input type="radio" name="question2" value="B">1<br>
+      <input type="radio" name="question2" value="C">3<br>
+      <input type="radio" name="question2" value="D">4<br>
+    </li>
+  </ul>
+  
+  <button onclick="returnScore()">View Results</button> -->
