@@ -5,13 +5,16 @@ function gamestart() {
         console.log("Ready")
     });
 
+    // Correct and wrong variables
     var right = 0;
     var wrong = 0;
 
+    // Pushes values to corresponding html element
     $("#righthtml").text(right);
     $("#wronghtml").text(wrong);
 
 
+    // Tallies answers based on if user picked right or wrong answer
     $(".answer").on("click", function () {
         if ($(this).val() == "correct") {
             right++;
@@ -23,17 +26,17 @@ function gamestart() {
         }
     })
 
-
+    // Submit button which stops timers
     $(".submit").on("click", function () {
-        // window.location.href = './resultspage.html';
-        //look for end timer function on redirect or button click
         clearInterval(interval);
-        // tally();
         timeUp();
     })
 
+    // Set time for user to play the game
     setTimeout(timeUp, 1000 * 30);
 
+
+    // Displays score
     function timeUp() {
         console.log("done");
         $("#time-left").append("<h2>Time's Up!</h2>");
@@ -42,20 +45,19 @@ function gamestart() {
         alert("Time is up! " + "You got " + right + " correct and " + wrong + " wrong and " + (5 - right - wrong) + " incomplete.");
     }
 
+    // Displays timer remaining
     var seconds_left = 30;
     var interval = setInterval(function () {
         document.getElementById('timer_div').innerHTML = --seconds_left;
-
-        // if (seconds_left <= 0) {
-        // document.getElementById('timer_div').innerHTML = "You got " + right + " correct and " + wrong + " wrong and " + (5 - right - wrong) + " incomplete.";
-        // }
     }, 1000);
 
+    // Function for tallying right and wrong answers
     function tally() {
         document.getElementById('timer_div').innerHTML = "You got " + right + " correct and " + wrong + " wrong and " + (5 - right - wrong) + " incomplete.";
     }
 }
 
+// Hides the game until the player hits "Start" button
 $("body > form").hide()
 $("#start").on("click", function () {
     gamestart();
