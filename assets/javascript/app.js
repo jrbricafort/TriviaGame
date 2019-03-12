@@ -1,26 +1,44 @@
-// this.val
-// setTimeout(fiveSeconds, 1000 * 5);
-// setTimeout(tenSeconds, 1000 * 10);
-setTimeout(timeUp, 1000 * 30);
+$(document).ready(function () {
+    console.log("Ready")
+});
 
-// function fiveSeconds() {
-//   // in the element with an id of time-left add an h2 saying About 10 Seconds Left!
-//   // console log 10 seconds left
-//   $("#time-left").append("<h2>About 10 Seconds Left!</h2>");
-//   console.log("10 seconds left");
-// }
+var right = 0;
+var wrong = 0;
 
-// function tenSeconds() {
-//   // in the element with an id of time-left add an h2 saying About 5 Seconds Left!
-//   // console log 5 seconds left
-//   $("#time-left").append("<h2>About 5 Seconds Left!</h2>");
-//   console.log("5 seconds left");
-// }
+$("#righthtml").text(right);
+$("#wronghtml").text(wrong);
+
+$(".answer").on("click", function () {
+    if ($(this).val() == "correct") {
+        right++;
+        console.log(right)
+    }
+    else {
+        wrong++;
+        console.log(wrong)
+    }
+})
+
+$(".submit").on("click", function () {
+    window.location.href = './resultspage.html';
+    //look for end timer function on redirect or button click
+    clearTimeout(timeUp);
+})
+
+setTimeout(timeUp, 1000 * 10);
 
 function timeUp() {
-  // in the element with an id of time-left add an h2 saying Time's Up!
-  // console log done
-  console.log("done");
-  $("#time-left").append("<h2>Time's Up!</h2>");
-  alert("Time is up");
+    console.log("done");
+    $("#time-left").append("<h2>Time's Up!</h2>");
+    alert("Time is up! " + "You got " + right + " correct and " + wrong + " wrong");
 }
+
+var seconds_left = 10;
+var interval = setInterval(function () {
+    document.getElementById('timer_div').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0) {
+        document.getElementById('timer_div').innerHTML = "You got " + right + " correct" + " and " + wrong + " wrong.";
+        clearInterval(interval);
+    }
+}, 1000);
