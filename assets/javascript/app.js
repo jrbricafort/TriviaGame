@@ -25,20 +25,20 @@ $(".submit").on("click", function () {
     clearTimeout(timeUp);
 })
 
-setTimeout(timeUp, 1000 * 10);
+setTimeout(timeUp, 1000 * 30);
 
 function timeUp() {
     console.log("done");
     $("#time-left").append("<h2>Time's Up!</h2>");
-    alert("Time is up! " + "You got " + right + " correct and " + wrong + " wrong");
+    alert("Time is up! " + "You got " + right + " correct and " + wrong + " wrong and " + (5-right-wrong) + " incomplete.");
 }
 
-var seconds_left = 10;
+var seconds_left = 30;
 var interval = setInterval(function () {
     document.getElementById('timer_div').innerHTML = --seconds_left;
 
     if (seconds_left <= 0) {
-        document.getElementById('timer_div').innerHTML = "You got " + right + " correct" + " and " + wrong + " wrong.";
+        document.getElementById('timer_div').innerHTML = "You got " + right + " correct and " + wrong + " wrong and " + (5-right-wrong) + " incomplete.";
         clearInterval(interval);
     }
 }, 1000);
