@@ -29,11 +29,13 @@ function gamestart() {
     // Submit button which stops timers
     $(".submit").on("click", function () {
         clearInterval(interval);
+        clearInterval(earlySubmit);
         timeUp();
+
     })
 
     // Set time for user to play the game
-    setTimeout(timeUp, 1000 * 30);
+    var earlySubmit = setInterval(timeUp, 1000 * 30);
 
 
     // Displays score
