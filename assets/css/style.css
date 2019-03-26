@@ -1,13 +1,14 @@
-body{
+body {
     text-align: center;
-    margin-left: 80px;
+    /* margin-left: 80px; */
     background-image: url("../images/240_F_80320717_FZ6vY1Ap11QcIbySrvvUNGQrN7L1HDMN.jpg");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
     height: 100vh;
 }
-#start{
+
+#start {
     text-align: center;
     padding: 15px;
     border: solid black 1px;
@@ -15,26 +16,26 @@ body{
     border-radius: 10px;
     color: beige;
 }
-h1{
+
+h1 {
     font-size: 50px;
 }
 
-h2{
+h2 {
     text-align: left;
 }
 
-h3{
+h3 {
     font-size: 30px;
 }
 
-
-p{
+p {
     padding: 10px;
     font-size: 20px;
     text-align: left;
 }
 
-.submit{
+.submit {
     float: right;
     padding: 15px;
     border: solid black 1px;
